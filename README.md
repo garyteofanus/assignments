@@ -61,7 +61,7 @@ Semester Genap 2019/2020
     > sudah punya sebuah *remote* bernama `origin` yang mengarah ke repositori
     > kamu di GitLab. Contoh di atas memberitahu repositori git lokal kamu
     > untuk melacak sebuah repositori git *remote* lainnya yang berada di
-    > `http://gitlab.com/DDP2-CSUI/2020/assignments.git` dan menamainya `upstream`.
+    > `https://gitlab.com/DDP2-CSUI/2020/assignments.git` dan menamainya `upstream`.
 
 10. Nantinya, akan ada pembaruan pada repositori pusat (misalnya ada soal tugas
     baru atau revisi). Kamu bisa mendapatkan *commit* terbaru dari `upstream` dan
@@ -108,9 +108,9 @@ Semester Genap 2019/2020
 4. Gunakan `git add` atau `git rm` untuk *stage*/*unstage* berkas yang ingin
    disimpan ke repositori git kamu.
 5. Ketika kamu ingin menyimpan progres, *commit* pekerjaan kamu ke repositori
-   dengan command `git commit -m "<sebuah pesan commit>"`. Usahakan
-   untuk mengikuti [panduan ini](http://chris.beams.io/posts/git-commit/) dalam
-   menuliskan pesan *commit* yang baik.
+   dengan command `git commit -m "<sebuah pesan commit>"`. Usahakan untuk
+   mengikuti [panduan ini][panduan-commit] untuk menuliskan pesan *commit*
+   yang baik.
 6. Ulangi langkah 3-5 sampai kamu menyelesaikan tugas tersebut.
 7. Ketika kamu sudah siap untuk mengumpulkan pekerjaan kamu (atau ingin
    menyimpan progres ke GitLab), lakukan `git push` seperti yang dicontohkan
@@ -147,4 +147,5 @@ menghubungi tim pengajar secara langsung melalui informasi kontak yang
 tersedia di SCeLE.
 
 [repositori-pusat]: https://gitlab.com/DDP2-CSUI/2020/assignments
+[panduan-commit]: https://chris.beams.io/posts/git-commit
 [panduan-konflik]: https://githowto.com/resolving_conflicts
