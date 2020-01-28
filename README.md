@@ -36,12 +36,14 @@ Semester Genap 2019/2020
     Cloning into 'tugas'...
     ```
 
+    Catatan: nama direktori `tugas` bisa diganti sesuai keinginan kamu.
+
 8. Masuk ke direktori hasil *clone* yang baru saja selesai dan coba gunakan
    perintah `git status`. Contoh:
 
     ```bash
     > cd tugas
-    > git status
+    tugas> git status
     On branch master
     nothing to commit, working tree clean
     ```
@@ -50,7 +52,7 @@ Semester Genap 2019/2020
    [repositori pusat][repositori-pusat] (milik tim pengajar). Contoh:
 
     ```bash
-    $ git remote add upstream https://gitlab.com/DDP2-CSUI/2020/assignments.git
+    tugas> git remote add upstream https://gitlab.com/DDP2-CSUI/2020/assignments.git
     ```
     > Catatan: Sebuah *git remote* adalah sepasang alias dan pranala ke
     > suatu repositori. Secara *default*, repositori yang baru saja kamu *clone*
@@ -65,7 +67,7 @@ Semester Genap 2019/2020
     Contoh:
 
     ```bash
-    > git pull upstream master
+    tugas> git pull upstream master
     From gitlab.com:DDP2-CSUI/2020/assignments
     Merge made by the 'recursive' strategy.
     ```
@@ -75,7 +77,7 @@ Semester Genap 2019/2020
     pada repositori lokal ke repositori di GitLab (jika *commit* tersebut belum ada).
 
     ```bash
-    > git push origin master
+    tugas> git push origin master
     Counting objects: 42, done.
     Delta compression using up to 8 threads.
     Compressing objects: 100% (37/37), done.
