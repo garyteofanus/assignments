@@ -12,7 +12,8 @@ Semester Genap 2019/2020
 2. [Memulai](#memulai)
 3. [Mengerjakan Tugas Pemrograman](#mengerjakan-tugas-pemrograman)
 4. [Mendapatkan pembaruan dari *upstream*](#mendapatkan-pembaruan-dari-upstream)
-5. [Informasi kontak](#informasi-kontak)
+5. [Menyelesaikan konflik](#menyelesaikan-konflik)
+6. [Informasi kontak](#informasi-kontak)
 
 ## Memulai
 
@@ -111,9 +112,33 @@ Semester Genap 2019/2020
    menyimpan progres ke GitLab), lakukan `git push` seperti yang dicontohkan
    di atas.
 
+## Mendapatkan pembaruan dari *upstream*
+
+Jika ada pembaruan dari `upstream`, kamu bisa mendapatkan semua *commit*
+terbaru dan menggabungkannya ke repositori git lokal kamu menggunakan perintah
+`git pull upstream master` seperti yang dicontohkan di atas.
+
+Jika kamu belum mengubah teks editor *default* yang digunakan oleh git, yakni
+`vim`, akan muncul antarmuka `vim` yang memungkinkan kamu untuk mengubah pesan
+*commit*. Jangan khawatir! Kamu bisa keluar dari `vim` dengan mengetik `:q`
+lalu menekan <kbd>Enter</kbd>.
+
+Jika kondisi `vim` kamu sudah dalam mode `INSERT`, kamu mungkin harus menekan
+<kbd>Esc</kbd> terlebih dahulu. Jika kamu sudah mengubah isi pesan *commit*
+dan ingin menyimpannya, kamu bisa mengetik `:wq` untuk menyimpan dan keluar
+dari `vim`. Jika kamu tidak ingin menyimpan perubahan tersebut, kamu bisa
+mengetik `:q!` untuk memaksa keluar dari `vim`.
+
+## Menyelesaikan konflik
+
+Jika terjadi *merge conflict*, silakan selesaikan konflik yang ada dan
+lanjutkan proses *merging*. Kamu bisa cari [panduan][panduan-konflik] atau
+meminta bantuan asdos jika mengalami kesulitan.
+
 ## Informasi kontak
 
 Jika kamu punya pertanyaan atau umpan balik terkait soal tugas pemrograman,
 silakan gunakan GitLab *Issues* pada repositori pusat.
 
 [repositori-pusat]: https://gitlab.com/DDP2-CSUI/2020/assignments
+[panduan-konflik]: https://githowto.com/resolving_conflicts
