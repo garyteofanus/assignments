@@ -17,29 +17,31 @@ Semester Genap 2019/2020
 
 ## Memulai
 
-1. [*Fork*](/-/forks/new) repositori ini ke akun GitLab kamu.
-2. Ubah visibilitas repositori hasil *fork* tersebut menjadi *private* melalui
+1. [***Fork***](/-/forks/new) repositori ini ke akun GitLab kamu.
+2. Ubah visibilitas repositori hasil *fork* tersebut menjadi ***private*** melalui
    *Settings* (di sebelah kiri bawah) > *General* >
    *Visibility, project features, permissions* > *Project visibility* >
    *Private* > *Save changes*.
 3. Tambahkan asdos kamu sebagai anggota di repositori kamu melalui *Settings* >
-   *Members* dengan hak akses minimal *Reporter*.
-4. Kembali ke *Project overview*, klik tombol *Clone* yang ada di kanan atas.
-5. Salin pranala (*link*) HTTPS (atau SSH jika kamu sudah mengaturnya) yang muncul.
+   *Members* dengan hak akses minimal ***Reporter***.
+4. Kembali ke *Project overview*, klik tombol ***Clone*** yang ada di kanan atas.
+5. Salin pranala (*link*) **HTTPS** (atau SSH jika kamu sudah mengaturnya) yang
+   muncul.
 6. Buka terminal/*shell* (misal: `cmd`, `bash`) di komputer kamu dan lakukan
    navigasi ke direktori yang kamu inginkan untuk menyimpan pekerjaan kamu.
-7. *Clone* repositori kamu yang ada di GitLab ke komputer kamu menggunakan
-   perintah `git clone`. Contoh:
+7. ***Clone*** repositori kamu yang ada di GitLab ke komputer kamu menggunakan
+   perintah **`git clone`**. Contoh:
 
     ```bash
     > git clone https://gitlab.com/DDP2-CSUI/2020/assignments.git tugas
     Cloning into 'tugas'...
     ```
 
-    Catatan: nama direktori `tugas` bisa diganti sesuai keinginan kamu.
+    Catatan: nama direktori `tugas` bisa diganti sesuai keinginan kamu, atau
+    bisa juga dihapus apabila ingin menggunakan nama direktori `assignments`.
 
 8. Masuk ke direktori hasil *clone* yang baru saja selesai dan coba gunakan
-   perintah `git status`. Contoh:
+   perintah **`git status`**. Contoh:
 
     ```bash
     > cd tugas
@@ -48,22 +50,22 @@ Semester Genap 2019/2020
     nothing to commit, working tree clean
     ```
 
-9. Tambahkan repositori *remote* bernama `upstream` yang mengarah ke
+9. Tambahkan repositori ***remote*** bernama **`upstream`** yang mengarah ke
    [repositori pusat][repositori-pusat] (milik tim pengajar). Contoh:
 
     ```bash
     tugas> git remote add upstream https://gitlab.com/DDP2-CSUI/2020/assignments.git
     ```
-    > Catatan: Sebuah *git remote* adalah sepasang alias dan pranala ke
+    > Catatan: Sebuah git *remote* adalah sepasang alias dan pranala ke
     > suatu repositori. Secara *default*, repositori yang baru saja kamu *clone*
     > sudah punya sebuah *remote* bernama `origin` yang mengarah ke repositori
     > kamu di GitLab. Contoh di atas memberitahu repositori git lokal kamu
-    > untuk melacak repositori git *remote* lainnya yang berada di
+    > untuk melacak sebuah repositori git *remote* lainnya yang berada di
     > `http://gitlab.com/DDP2-CSUI/2020/assignments.git` dan menamainya `upstream`.
 
 10. Nantinya, akan ada pembaruan pada repositori pusat (misalnya ada soal tugas
     baru atau revisi). Kamu bisa mendapatkan *commit* terbaru dari `upstream` dan
-    menggabungkannya ke repositori lokal kamu menggunakan perintah `git pull`.
+    menggabungkannya ke repositori lokal kamu menggunakan perintah **`git pull`**.
     Contoh:
 
     ```bash
@@ -73,7 +75,7 @@ Semester Genap 2019/2020
     ```
 
 11. Apabila kamu ingin menyimpan pekerjaan ke repositori GitLab kamu, gunakan
-    perintah `git push`. Perintah ini akan mengirimkan semua *commit* yang ada
+    perintah **`git push`**. Perintah ini akan mengirimkan semua *commit* yang ada
     pada repositori lokal ke repositori di GitLab (jika *commit* tersebut belum ada).
 
     ```bash
@@ -87,7 +89,7 @@ Semester Genap 2019/2020
      * [new branch]      master -> master
     ```
 
-    Pastikan kamu melakukan `push` ke *remote* `origin`, **bukan** `upstream`!
+    Pastikan kamu melakukan `push` ke *remote* **`origin`**, **bukan** `upstream`!
 
 12. Kamu bisa memeriksa bahwa *commit* yang ada di repositori lokal kamu juga
     ada di repositori GitLab kamu.
@@ -140,7 +142,9 @@ meminta bantuan asdos jika mengalami kesulitan.
 ## Informasi kontak
 
 Jika kamu punya pertanyaan atau umpan balik terkait soal tugas pemrograman,
-silakan gunakan GitLab *Issues* pada repositori pusat.
+silakan gunakan GitLab *Issues* pada repositori pusat. Kamu juga bisa
+menghubungi tim pengajar secara langsung melalui informasi kontak yang
+tersedia di SCeLE.
 
 [repositori-pusat]: https://gitlab.com/DDP2-CSUI/2020/assignments
 [panduan-konflik]: https://githowto.com/resolving_conflicts
