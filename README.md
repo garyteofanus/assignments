@@ -142,7 +142,7 @@ meminta bantuan asdos jika mengalami kesulitan.
 ## Informasi kontak
 
 Jika kamu punya pertanyaan atau umpan balik terkait soal tugas pemrograman,
-silakan gunakan GitLab *Issues* pada repositori pusat. Kamu juga bisa
+silakan gunakan [GitLab *Issues*][issues] pada repositori pusat. Kamu juga bisa
 menghubungi tim pengajar secara langsung melalui informasi kontak yang
 tersedia di SCeLE.
 
@@ -150,3 +150,4 @@ tersedia di SCeLE.
 [repositori-pusat]: https://gitlab.com/DDP2-CSUI/2020/assignments
 [panduan-commit]: https://chris.beams.io/posts/git-commit
 [panduan-konflik]: https://githowto.com/resolving_conflicts
+[issues]: https://gitlab.com/DDP2-CSUI/2020/assignments/issues
