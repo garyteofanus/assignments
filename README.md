@@ -17,7 +17,7 @@ Semester Genap 2019/2020
 
 ## Memulai
 
-1. [***Fork***](/-/forks/new) repositori ini ke akun GitLab kamu.
+1. [***Fork***][fork] repositori ini ke akun GitLab kamu.
 2. Ubah visibilitas repositori hasil *fork* tersebut menjadi ***private*** melalui
    *Settings* (di sebelah kiri bawah) > *General* >
    *Visibility, project features, permissions* > *Project visibility* >
@@ -146,6 +146,7 @@ silakan gunakan GitLab *Issues* pada repositori pusat. Kamu juga bisa
 menghubungi tim pengajar secara langsung melalui informasi kontak yang
 tersedia di SCeLE.
 
+[fork]: ../-/forks/new
 [repositori-pusat]: https://gitlab.com/DDP2-CSUI/2020/assignments
 [panduan-commit]: https://chris.beams.io/posts/git-commit
 [panduan-konflik]: https://githowto.com/resolving_conflicts
