@@ -14,6 +14,8 @@ Semester Genap 2019/2020
 4. [Mendapatkan pembaruan dari *upstream*](#mendapatkan-pembaruan-dari-upstream)
 5. [Menyelesaikan konflik](#menyelesaikan-konflik)
 6. [Informasi kontak](#informasi-kontak)
+7. [Atribusi](#atribusi)
+8. [Lisensi](#lisensi)
 
 ## Memulai
 
@@ -146,8 +148,30 @@ silakan gunakan [GitLab *Issues*][issues] pada repositori pusat. Kamu juga bisa
 menghubungi tim pengajar secara langsung melalui informasi kontak yang
 tersedia di SCeLE.
 
+## Atribusi
+
+Struktur Gradle multi-proyek dan isi berkas README utama diadaptasi dari
+repositori [Tugas Pemrograman DDP2 2017/2018 Genap][repositori-2018].
+
+## Lisensi
+
+Hak cipta (c) 2020, Fakultas Ilmu Komputer Universitas Indonesia
+
+Izin legal untuk menyalin, mengubah, dan membagikan pekerjaan dalam proyek ini
+diatur dalam dua lisensi: [BSD 3-Clause][lisensi-bsd] dan
+[Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)][lisensi-cc].
+Kecuali disebutkan sebaliknya, lisensi BSD 3-Clause berlaku untuk kode sumber
+(contoh: Java, YML, berkas konfigurasi), sedangkan CC BY-SA 4.0 berlaku untuk
+dokumen teks dalam proyek ini.
+
+Peraturan akademis, terutama terkait **plagiarisme**, tetap berlaku sebagaimana
+yang telah dijelaskan dalam perkuliahan.
+
 [fork]: ../-/forks/new
 [repositori-pusat]: https://gitlab.com/DDP2-CSUI/2020/assignments
 [panduan-commit]: https://chris.beams.io/posts/git-commit
 [panduan-konflik]: https://githowto.com/resolving_conflicts
 [issues]: https://gitlab.com/DDP2-CSUI/2020/assignments/issues
+[repositori-2018]: https://gitlab.com/DDP2-CSUI/assignment
+[lisensi-bsd]: LICENSE
+[lisensi-cc]: https://creativecommons.org/licenses/by-sa/4.0
