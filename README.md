@@ -107,8 +107,8 @@ Semester Genap 2019/2020
    berisi soal tugas tersebut (contoh: `assignment-1`).
 2. **Baca** berkas `README.md` di dalam direktori `assignment-1` dengan teliti.
 3. Kerjakan tugas tersebut.
-4. Gunakan `git add` atau `git rm` untuk *stage*/*unstage* berkas yang ingin
-   disimpan ke repositori git kamu.
+4. Gunakan `git add` atau `git reset` untuk *stage*/*unstage* berkas yang ingin
+   di-*commit* ke repositori git kamu.
 5. Ketika kamu ingin menyimpan progres, *commit* pekerjaan kamu ke repositori
    dengan command `git commit -m "<sebuah pesan commit>"`. Usahakan untuk
    mengikuti [panduan ini][panduan-commit] untuk menuliskan pesan *commit*
