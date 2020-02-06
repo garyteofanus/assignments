@@ -1,14 +1,27 @@
+buildscript {
+    ext.junitVersion = '5.6.0'
+    ext.checkstyleVersion = '8.29'
+    ext.checkstyleConfig = 'google_csui_checks.xml'
+}
+
 subprojects {
     apply plugin: 'java'
+    apply plugin: 'application'
+    apply plugin: 'checkstyle'
+    checkstyle {
+        toolVersion = checkstyleVersion
+        config = resources.text.fromFile(configDirectory.file("${checkstyleConfig}"))
+        maxWarnings = 0  // Fail the build if there are any warnings
+        sourceSets = []  // Do not run checkstyle on gradle build/check
+    }
 
     repositories {
         jcenter()
     }
 
     dependencies {
-        ext.junitVersion = '5.6.0'
-        testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
-        testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+        testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+        testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
     }
 
     test {

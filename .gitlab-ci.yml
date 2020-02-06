@@ -2,6 +2,7 @@ image: gradle:6.1.1-jdk13
 
 stages:
   - build
+  - test
 
 build:
   stage: build
@@ -12,3 +13,16 @@ build:
     paths:
       - assignment-*/build
       - assignment-*/.gradle
+
+checkstyle:
+  stage: test
+  script: gradle checkstyleMain checkstyleTest
+  allow_failure: true
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    policy: pull
+    paths:
+      - assignment-*/build
+      - assignment-*/.gradle
+  rules:
+    - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
