@@ -31,5 +31,8 @@ test:a1:
     paths:
       - assignment1/build
       - .gradle
+  artifacts:
+    paths:
+      - assignment1
   rules:
     - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
