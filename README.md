@@ -26,7 +26,7 @@ Semester Genap 2019/2020
    *Visibility, project features, permissions* > *Project visibility* >
    *Private* > *Save changes*.
 3. Tambahkan asdos kamu sebagai anggota di repositori kamu melalui *Settings* >
-   *Members* dengan hak akses minimal ***Reporter***.
+   *Members* dengan hak akses ***Maintainer***.
 4. Kembali ke *Project overview*, klik tombol ***Clone*** yang ada di kanan atas.
 5. Salin pranala (*link*) **HTTPS** (atau SSH jika kamu sudah mengaturnya) yang
    muncul.
