@@ -6,19 +6,18 @@ public class HammingCode {
     static final int ENCODE_NUM = 1;
     static final int DECODE_NUM = 2;
     static final int EXIT_NUM = 3;
-    
-    public String encode(String data) {
+
+    public static String encode(String data) {
         return "TODO";
     }
-    
-    public String decode(String code) {
+
+    public static String decode(String code) {
         return "TODO";
     }
 
     public static void main(String[] args) {
         System.out.println("Selamat datang di program Hamming Code!");
         System.out.println("=======================================");
-        HammingCode hammingCode = new HammingCode();
         Scanner in = new Scanner(System.in);
         boolean hasChosenExit = false;
         while (!hasChosenExit) {
@@ -32,12 +31,12 @@ public class HammingCode {
             if (operation == ENCODE_NUM) {
                 System.out.println("Masukkan data: ");
                 String data = in.next();
-                String code = hammingCode.encode(data);
+                String code = encode(data);
                 System.out.println("Code dari data tersebut adalah: " + code);
             } else if (operation == DECODE_NUM) {
                 System.out.println("Masukkan code: ");
                 String code = in.next();
-                String data = hammingCode.decode(code);
+                String data = decode(code);
                 System.out.println("Data dari code tersebut adalah: " + data);
             } else if (operation == EXIT_NUM) {
                 System.out.println("Sampai jumpa!");
