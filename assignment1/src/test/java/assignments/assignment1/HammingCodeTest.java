@@ -1,9 +1,9 @@
 package assignments.assignment1;
 
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Test;
 
 public class HammingCodeTest {
     @Test public void testEncodeSample1() {

@@ -15,6 +15,10 @@ public class HammingCode {
         return "TODO";
     }
 
+    /**
+     * Main program for Hamming Code.
+     * @param args unused
+     */
     public static void main(String[] args) {
         System.out.println("Selamat datang di program Hamming Code!");
         System.out.println("=======================================");
