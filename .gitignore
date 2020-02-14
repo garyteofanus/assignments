@@ -1,4 +1,5 @@
 # Customized ignores
+**/*.class
 
 # IDEs and text editor configurations
 # Delete these if you want to use gitignore.io's instead.

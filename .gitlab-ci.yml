@@ -6,23 +6,34 @@ stages:
 
 build:
   stage: build
-  script: gradle --build-cache build
+  script: gradle build -x test
   cache:
     key: "$CI_COMMIT_REF_NAME"
-    policy: push
     paths:
-      - assignment-*/build
-      - assignment-*/.gradle
+      - assignment*/build
+      - .gradle
 
-checkstyle:
+checkstyle:a1:
   stage: test
-  script: gradle checkstyleMain checkstyleTest
+  script: gradle :assignment1:checkstyleMain :assignment1:checkstyleTest
   allow_failure: true
   cache:
     key: "$CI_COMMIT_REF_NAME"
-    policy: pull
     paths:
-      - assignment-*/build
-      - assignment-*/.gradle
+      - assignment1/build
+      - .gradle
+
+test:a1:
+  stage: test
+  script: gradle :assignment1:test
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    paths:
+      - assignment1/build
+      - .gradle
+  artifacts:
+    paths:
+      - assignment1
+    when: always
   rules:
     - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'

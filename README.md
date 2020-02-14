@@ -8,14 +8,15 @@ Semester Genap 2019/2020
 ## Daftar Isi
 
 1. Soal Tugas Pemrograman
-    1. TBD
+    1. [Tugas Pemrograman 1: Kode-Kode Privab][tp1]
 2. [Memulai](#memulai)
 3. [Mengerjakan Tugas Pemrograman](#mengerjakan-tugas-pemrograman)
 4. [Mendapatkan pembaruan dari *upstream*](#mendapatkan-pembaruan-dari-upstream)
 5. [Menyelesaikan konflik](#menyelesaikan-konflik)
-6. [Informasi kontak](#informasi-kontak)
-7. [Atribusi](#atribusi)
-8. [Lisensi](#lisensi)
+6. [Penjelasan GitLab Pipelines](#penjelasan-gitlab-pipelines)
+7. [Informasi kontak](#informasi-kontak)
+8. [Atribusi](#atribusi)
+9. [Lisensi](#lisensi)
 
 ## Memulai
 
@@ -25,7 +26,7 @@ Semester Genap 2019/2020
    *Visibility, project features, permissions* > *Project visibility* >
    *Private* > *Save changes*.
 3. Tambahkan asdos kamu sebagai anggota di repositori kamu melalui *Settings* >
-   *Members* dengan hak akses minimal ***Reporter***.
+   *Members* dengan hak akses ***Maintainer***.
 4. Kembali ke *Project overview*, klik tombol ***Clone*** yang ada di kanan atas.
 5. Salin pranala (*link*) **HTTPS** (atau SSH jika kamu sudah mengaturnya) yang
    muncul.
@@ -104,8 +105,8 @@ Semester Genap 2019/2020
 ## Mengerjakan Tugas Pemrograman
 
 1. Misalnya kamu ingin mengerjakan Tugas Pemrograman 1. Masuk ke direktori yang
-   berisi soal tugas tersebut (contoh: `assignment-1`).
-2. **Baca** berkas `README.md` di dalam direktori `assignment-1` dengan teliti.
+   berisi soal tugas tersebut (contoh: `assignment1`).
+2. **Baca** berkas `README.md` di dalam direktori `assignment1` dengan teliti.
 3. Kerjakan tugas tersebut.
 4. Gunakan `git add` atau `git reset` untuk *stage*/*unstage* berkas yang ingin
    di-*commit* ke repositori git kamu.
@@ -141,6 +142,54 @@ Jika terjadi *merge conflict*, silakan selesaikan konflik yang ada dan
 lanjutkan proses *merging*. Kamu bisa cari [panduan][panduan-konflik] atau
 meminta bantuan asdos jika mengalami kesulitan.
 
+## Penjelasan GitLab Pipelines
+
+Setelah kamu melakukan `git push`, GitLab akan otomatis menjalankan suatu
+*pipeline* yang terdiri atas beberapa *stage*, dan setiap *stage* terdiri
+atas beberapa *job*. Setiap *job* akan menjalankan serangkaian perintah
+dalam suatu *runner* (seperti *virtual machine*) yang di dalamnya sudah
+terinstal JDK 13 dan Gradle 6.1.1.
+
+Sebagai contoh, ketika Tugas Pemrograman 1 dirilis, sebuah *pipeline* terdiri
+atas 2 *stage*, yakni `build` dan `test`. Pada *stage* `build`, terdapat 1
+*job*, yakni `build`. Pada *stage* `test`, terdapat dua *job*, yakni
+`test:a1` dan `checkstyle:a1`.
+
+Untuk ilustrasi, misalkan kamu baru mem-*fork* repositori ini. Lalu, kamu
+mengerjakan *method* `encode` untuk Tugas Pemrograman 1. Ketika kamu *push*
+kode kamu, kamu mungkin akan mendapatkan hasil seperti ini pada halaman
+[*pipelines*][pipelines].
+
+![Progress 0](static/img/progress0.png)
+
+Centang hijau pada bulatan pertama artinya kode kamu berhasil melalui semua *job* di *stage* `build` (berhasil di-*compile* oleh GitLab Runner).
+
+![Progress 1](static/img/progress1.png)
+
+Silang merah pada bulatan kedua artinya kode kamu gagal melalui *stage*
+`test`. Ini karena kamu belum mengimplementasikan *method* `decode`, sehingga
+*job* `test:a1` yang menguji program kamu masih belum berhasil.
+
+Misalnya sekarang kamu sudah berhasil mengimplementasikan *method* `decode`.
+Kamu membuat *commit* baru dan mem-*push* pekerjaan kamu.
+
+![Progress 2](static/img/progress2.png)
+
+Tanda seru oranye pada bulatan kedua artinya kode kamu berhasil melalui semua
+*job* wajib, tetapi ada *job* opsional yang gagal pada *stage* `test`. Dapat
+dilihat bahwa *job* `test:a1` (wajib) sekarang sudah dicentang hijau, tetapi
+*job* `checkstyle:a1` (opsional) memiliki tanda seru oranye.
+
+Misalnya sekarang kamu sudah berhasil menyelesaikan pekerjaan opsional
+(penyesuaian kode dengan aturan Checkstyle yang diterapkan). Kamu membuat
+*commit* dan mem-*push* pekerjaan kamu.
+
+![Progress 3](static/img/progress3.png)
+
+Hore, sekarang semua *job* sudah dicentang hijau, dan status *pipeline* kamu
+juga dicentang hijau! Artinya, kamu sudah menyelesaikan semua pekerjaan wajib
+dan opsional pada **seluruh Tugas Pemrograman yang ada**.
+
 ## Informasi kontak
 
 Jika kamu punya pertanyaan atau umpan balik terkait soal tugas pemrograman,
@@ -167,10 +216,12 @@ dokumen teks dalam proyek ini.
 Peraturan akademis, terutama terkait **plagiarisme**, tetap berlaku sebagaimana
 yang telah dijelaskan dalam perkuliahan.
 
+[tp1]: assignment1/README.md
 [fork]: ../-/forks/new
 [repositori-pusat]: https://gitlab.com/DDP2-CSUI/2020/assignments
 [panduan-commit]: https://chris.beams.io/posts/git-commit
 [panduan-konflik]: https://githowto.com/resolving_conflicts
+[pipelines]: ../pipelines
 [issues]: https://gitlab.com/DDP2-CSUI/2020/assignments/issues
 [repositori-2018]: https://gitlab.com/DDP2-CSUI/assignment
 [lisensi-bsd]: LICENSE
