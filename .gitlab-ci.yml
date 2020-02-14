@@ -15,7 +15,7 @@ build:
 
 checkstyle:a1:
   stage: test
-  script: gradle checkstyleMain checkstyleTest
+  script: gradle :assignment1:checkstyleMain :assignment1:checkstyleTest
   allow_failure: true
   cache:
     key: "$CI_COMMIT_REF_NAME"
@@ -25,7 +25,7 @@ checkstyle:a1:
 
 test:a1:
   stage: test
-  script: gradle :assignment-1:test
+  script: gradle :assignment1:test
   cache:
     key: "$CI_COMMIT_REF_NAME"
     paths:

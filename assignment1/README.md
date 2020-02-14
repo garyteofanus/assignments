@@ -58,7 +58,7 @@ Untuk menguji program dengan *test case* yang disediakan:
 (Bonus) Untuk memeriksa kode kamu terhadap aturan Checkstyle yang diterapkan:
 
 ```bash
-> gradlew.bat :assignment-1:checkstyleMain
+> gradlew.bat :assignment1:checkstyleMain
 ```
 
 > Tips: kamu bisa memeriksa hasil tes dalam bentuk dokumen HTML. Lihat dokumen

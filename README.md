@@ -104,8 +104,8 @@ Semester Genap 2019/2020
 ## Mengerjakan Tugas Pemrograman
 
 1. Misalnya kamu ingin mengerjakan Tugas Pemrograman 1. Masuk ke direktori yang
-   berisi soal tugas tersebut (contoh: `assignment-1`).
-2. **Baca** berkas `README.md` di dalam direktori `assignment-1` dengan teliti.
+   berisi soal tugas tersebut (contoh: `assignment1`).
+2. **Baca** berkas `README.md` di dalam direktori `assignment1` dengan teliti.
 3. Kerjakan tugas tersebut.
 4. Gunakan `git add` atau `git reset` untuk *stage*/*unstage* berkas yang ingin
    di-*commit* ke repositori git kamu.
