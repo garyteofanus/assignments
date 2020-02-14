@@ -11,7 +11,7 @@ build:
     key: "$CI_COMMIT_REF_NAME"
     paths:
       - assignment*/build
-      - assignment*/.gradle
+      - .gradle
 
 checkstyle:a1:
   stage: test
@@ -21,7 +21,7 @@ checkstyle:a1:
     key: "$CI_COMMIT_REF_NAME"
     paths:
       - assignment1/build
-      - assignment1/.gradle
+      - .gradle
 
 test:a1:
   stage: test
@@ -30,6 +30,6 @@ test:a1:
     key: "$CI_COMMIT_REF_NAME"
     paths:
       - assignment1/build
-      - assignment1/.gradle
+      - .gradle
   rules:
     - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
