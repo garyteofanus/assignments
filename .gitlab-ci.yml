@@ -34,5 +34,6 @@ test:a1:
   artifacts:
     paths:
       - assignment1
+    when: always
   rules:
     - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
