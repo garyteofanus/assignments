@@ -1,28 +1,7 @@
- buildscript {
-    ext.junitVersion = '5.6.0'
-    ext.checkstyleVersion = '8.29'
-    ext.checkstyleConfig = 'google_csui_checks.xml'
-}
-
-plugins {
-    id 'java'
-    id 'application'
-}
-
-repositories {
-    jcenter()
-}
-
-dependencies {
-    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
-}
-
-test {
-    useJUnitPlatform()
-}
-
 application {
-    // Define the main class for the application.
-    mainClassName = 'assignment1.HammingCode'
+    mainClassName = 'assignments.assignment1.HammingCode'
+}
+
+run {
+    standardInput = System.in
 }
