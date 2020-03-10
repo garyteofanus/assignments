@@ -6,7 +6,7 @@ public class ButirPenilaian {
     private boolean terlambat;
 
     public ButirPenilaian(double nilai, boolean terlambat) {
-        // TODO: buat constructor untuk ButirPenilaian.
+        // Membuat constructor untuk ButirPenilaian.
         if (nilai < 0) {
             this.nilai = 0;
         } else {
@@ -16,7 +16,7 @@ public class ButirPenilaian {
     }
 
     public double getNilai() {
-        // TODO: kembalikan nilai yang sudah disesuaikan dengan keterlambatan.
+        // Mengembalikan nilai yang sudah disesuaikan dengan keterlambatan.
         if (this.terlambat) {
             return this.nilai * 0.8;
         }
@@ -25,7 +25,7 @@ public class ButirPenilaian {
 
     @Override
     public String toString() {
-        // TODO: kembalikan representasi String dari ButirPenilaian sesuai permintaan soal.
+        // Mengembalikan representasi String dari ButirPenilaian sesuai permintaan soal.
         if (this.terlambat) {
             return String.format("%.2f (T)", getNilai());
         }

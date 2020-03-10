@@ -61,7 +61,7 @@ public class GlasDOS {
     }
 
     private AsistenDosen getAsistenDosen(String kode) {
-        // TODO: kembalikan AsistenDosen yang memiliki kode tertentu.
+        // Mengembalikan AsistenDosen yang memiliki kode tertentu.
         for (AsistenDosen asdos:
              asistenDosen) {
             if (asdos.getKode().toLowerCase().equals(kode.toLowerCase())) {
@@ -72,7 +72,7 @@ public class GlasDOS {
     }
 
     private Mahasiswa getMahasiswa(String kodeAsdos, String npm) {
-        // TODO: kembalikan Mahasiswa dengan NPM dan kodeAsdos tertentu.
+        // Mengembalikan Mahasiswa dengan NPM dan kodeAsdos tertentu.
         if (this.getAsistenDosen(kodeAsdos) != null) {
             return this.getAsistenDosen(kodeAsdos).getMahasiswa(npm);
         }
@@ -80,8 +80,8 @@ public class GlasDOS {
     }
 
     private KomponenPenilaian getKomponenPenilaian(String kodeAsdos, String npm, String namaKomponen) {
-        // TODO: kembalikan KomponenPenilaian dengan namaKomponen tertentu
-        //  dari seorang Mahasiswa dengan NPM tertentu dan kodeAsdos tertentu.
+        // Mengembalikan KomponenPenilaian dengan namaKomponen tertentu
+        // dari seorang Mahasiswa dengan NPM tertentu dan kodeAsdos tertentu.
         if (this.getMahasiswa(kodeAsdos, npm) != null) {
             return this.getMahasiswa(kodeAsdos, npm).getKomponenPenilaian(namaKomponen);
         }

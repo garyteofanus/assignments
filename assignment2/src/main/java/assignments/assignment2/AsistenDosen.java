@@ -10,27 +10,25 @@ public class AsistenDosen {
     private String nama;
 
     public AsistenDosen(String kode, String nama) {
-        // TODO: buat constructor untuk AsistenDosen.
+        // Membuat constructor untuk AsistenDosen.
         this.kode = kode;
         this.nama = nama;
     }
 
     public String getKode() {
-        // TODO: kembalikan kode AsistenDosen.
+        // Mengembalikan kode AsistenDosen.
         return this.kode;
     }
 
     public void addMahasiswa(Mahasiswa mahasiswa) {
-        // TODO: tambahkan mahasiswa ke dalam daftar mahasiswa dengan mempertahankan urutan.
-        // Hint: kamu boleh menggunakan Collections.sort atau melakukan sorting manual.
-        // Note: manfaatkan method compareTo pada Mahasiswa.
+        // Menambahkan mahasiswa ke dalam daftar mahasiswa dengan mempertahankan urutan menggunakan
+        // Collection.sort
         this.mahasiswa.add(mahasiswa);
         Collections.sort(this.mahasiswa);
     }
 
     public Mahasiswa getMahasiswa(String npm) {
-        // TODO: kembalikan objek Mahasiswa dengan NPM tertentu dari daftar mahasiswa.
-        // Note: jika tidak ada, kembalikan null atau lempar sebuah Exception.
+        // Mengembalikan objek Mahasiswa dengan NPM tertentu dari daftar mahasiswa.
         if (mahasiswa.size() != 0) {
             for (Mahasiswa mahasiswa:
                     mahasiswa) {

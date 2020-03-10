@@ -6,9 +6,7 @@ public class KomponenPenilaian {
     private int bobot;
 
     public KomponenPenilaian(String nama, int banyakButirPenilaian, int bobot) {
-        // TODO: buat constructor untuk KomponenPenilaian.
-        // Note: banyakButirPenilaian digunakan untuk menentukan panjang butirPenilaian saja
-        // (tanpa membuat objek-objek ButirPenilaian-nya).
+        // Membuat constructor untuk KomponenPenilaian.
         this.nama = nama;
         this.bobot = bobot;
         this.butirPenilaian  = new ButirPenilaian[banyakButirPenilaian];
@@ -36,17 +34,17 @@ public class KomponenPenilaian {
     }
 
     public void masukkanButirPenilaian(int idx, ButirPenilaian butir) {
-        // TODO: masukkan butir ke butirPenilaian pada index ke-idx.
+        // Memasukkan butir ke butirPenilaian pada index ke-idx.
         this.butirPenilaian[idx] = butir;
     }
 
     public String getNama() {
-        // TODO: kembalikan nama KomponenPenilaian.
+        // Mengembalikan nama KomponenPenilaian.
         return this.nama;
     }
 
     public double getRerata() {
-        // TODO: kembalikan rata-rata butirPenilaian.
+        // Mengembalikan rata-rata butirPenilaian.
         double sum = 0;
         int counter = 0;
         for (ButirPenilaian nilai:
@@ -60,12 +58,12 @@ public class KomponenPenilaian {
     }
 
     public double getNilai() {
-        // TODO: kembalikan rerata yang sudah dikalikan dengan bobot.
+        // Mengembalikan rerata yang sudah dikalikan dengan bobot.
         return this.getRerata() * (bobot / 100.0);
     }
 
     public String getDetail() {
-        // TODO: kembalikan detail KomponenPenilaian sesuai permintaan soal.
+        // Mengembalikan detail KomponenPenilaian sesuai permintaan soal.
         StringBuilder text = new StringBuilder(String.format("~~~ %s (%d%%) ~~~\n", this.nama, this.bobot));
         if (this.butirPenilaian.length == 1 && this.butirPenilaian[0] != null) {
             text.append(String.format("%s: %s\n", this.nama, this.butirPenilaian[0].toString()));
@@ -85,7 +83,7 @@ public class KomponenPenilaian {
 
     @Override
     public String toString() {
-        // TODO: kembalikan representasi String sebuah KomponenPenilaian sesuai permintaan soal.
+        // Mengembalikan representasi String sebuah KomponenPenilaian sesuai permintaan soal.
         return String.format("Rerata %s: %.2f", this.nama, this.getRerata());
     }
 

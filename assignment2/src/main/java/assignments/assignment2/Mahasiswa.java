@@ -6,15 +6,14 @@ public class Mahasiswa implements Comparable<Mahasiswa> {
     private KomponenPenilaian[] komponenPenilaian;
 
     public Mahasiswa(String npm, String nama, KomponenPenilaian[] komponenPenilaian) {
-        // TODO: buat constructor untuk Mahasiswa.
-        // Note: komponenPenilaian merupakan skema penilaian yang didapat dari GlasDOS.
+        // Membuat constructor untuk Mahasiswa.
         this.npm = npm;
         this.nama = nama;
         this.komponenPenilaian = komponenPenilaian;
     }
 
     public KomponenPenilaian getKomponenPenilaian(String namaKomponen) {
-        // TODO: kembalikan KomponenPenilaian yang bernama namaKomponen.
+        // Mengembalikan KomponenPenilaian yang bernama namaKomponen.
         // Note: jika tidak ada, kembalikan null atau lempar sebuah Exception.
         for (KomponenPenilaian komponen:
                 komponenPenilaian) {
@@ -26,7 +25,7 @@ public class Mahasiswa implements Comparable<Mahasiswa> {
     }
 
     public String getNpm() {
-        // TODO: kembalikan NPM mahasiswa.
+        // Mengembalikan NPM mahasiswa.
         return this.npm;
     }
 
@@ -56,7 +55,7 @@ public class Mahasiswa implements Comparable<Mahasiswa> {
     }
 
     public String rekap() {
-        // TODO: kembalikan rekapan sesuai dengan permintaan soal.
+        // Mengembalikan rekapan sesuai dengan permintaan soal.
         StringBuilder text = new StringBuilder();
         double nilaiAkhir = 0;
         for (KomponenPenilaian nilai:
@@ -71,12 +70,12 @@ public class Mahasiswa implements Comparable<Mahasiswa> {
     }
 
     public String toString() {
-        // TODO: kembalikan representasi String dari Mahasiswa sesuai permintaan soal.
+        // Mengembalikan representasi String dari Mahasiswa sesuai permintaan soal.
         return String.format("%s - %s", this.npm, this.nama);
     }
 
     public String getDetail() {
-        // TODO: kembalikan detail dari Mahasiswa sesuai permintaan soal.
+        // Mengembalikan detail dari Mahasiswa sesuai permintaan soal.
         StringBuilder text = new StringBuilder();
         double nilaiAkhir = 0;
         for (KomponenPenilaian nilai:
@@ -92,7 +91,7 @@ public class Mahasiswa implements Comparable<Mahasiswa> {
 
     @Override
     public int compareTo(Mahasiswa other) {
-        // TODO: definisikan cara membandingkan seorang mahasiswa dengan mahasiswa lainnya.
+        // Mendefinisikan cara membandingkan seorang mahasiswa dengan mahasiswa lainnya.
         // Hint: bandingkan NPM-nya, String juga punya method compareTo.
         if (this.npm.compareTo(other.getNpm()) > 0) {
             return 1;
