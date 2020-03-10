@@ -53,7 +53,7 @@ public class GlasDOS {
                 String[] dataMhs = input.nextLine().split(" ", 2);
                 KomponenPenilaian[] skema = KomponenPenilaian.salinTemplat(templatSkemaPenilaian);
                 Mahasiswa baru = new Mahasiswa(dataMhs[0], dataMhs[1], skema);
-                System.out.println(baru);
+                //System.out.println(baru);
                 newAsdos.addMahasiswa(baru);
             }
         }
@@ -62,17 +62,29 @@ public class GlasDOS {
 
     private AsistenDosen getAsistenDosen(String kode) {
         // TODO: kembalikan AsistenDosen yang memiliki kode tertentu.
+        for (AsistenDosen asdos:
+             asistenDosen) {
+            if (asdos.getKode().toLowerCase().equals(kode.toLowerCase())) {
+                return asdos;
+            }
+        }
         return null;
     }
 
     private Mahasiswa getMahasiswa(String kodeAsdos, String npm) {
         // TODO: kembalikan Mahasiswa dengan NPM dan kodeAsdos tertentu.
+        if (this.getAsistenDosen(kodeAsdos) != null) {
+            return this.getAsistenDosen(kodeAsdos).getMahasiswa(npm);
+        }
         return null;
     }
 
     private KomponenPenilaian getKomponenPenilaian(String kodeAsdos, String npm, String namaKomponen) {
         // TODO: kembalikan KomponenPenilaian dengan namaKomponen tertentu
         //  dari seorang Mahasiswa dengan NPM tertentu dan kodeAsdos tertentu.
+        if (this.getMahasiswa(kodeAsdos, npm) != null) {
+            return this.getMahasiswa(kodeAsdos, npm).getKomponenPenilaian(namaKomponen);
+        }
         return null;
     }
 
@@ -86,7 +98,7 @@ public class GlasDOS {
         System.out.println("Jika sudah selesai, tulis SELESAI dan tekan tombol Enter.");
         System.out.println();
         while (!input.hasNext("(?i)SELESAI")) {
-            String masukan[] = input.nextLine().split(" ");
+            String[] masukan = input.nextLine().split(" ");
             String kodeAsdos = masukan[0];
             String npm = masukan[1];
             String namaKomponen = masukan[2];
@@ -100,9 +112,9 @@ public class GlasDOS {
             } else {
                 System.out.println(
                     "Komponen penilaian untuk NPM " + npm + " pada kode asdos "
-                    + kodeAsdos + "tidak ditemukan!"
+                    + kodeAsdos + " tidak ditemukan!"
                 );
-            };
+            }
         }
         input.nextLine();
         System.out.println("Sukses! Kembali ke menu utama...");
@@ -122,7 +134,7 @@ public class GlasDOS {
             System.out.println(mahasiswa.getDetail());
         } else {
             System.out.println("Mahasiswa dengan kode asdos dan NPM tersebut tidak ditemukan!");
-        };
+        }
         System.out.println();
         System.out.println("Kembali ke menu utama...");
         System.out.println();
@@ -132,16 +144,16 @@ public class GlasDOS {
         System.out.println("--- Rekap ---");
         for (AsistenDosen asdos : asistenDosen) {
             System.out.println(asdos);
-            System.out.println();
+            //System.out.println();
             System.out.println(asdos.rekap());
-            System.out.println();
+            //System.out.println();
         }
         System.out.println("Kembali ke menu utama...");
         System.out.println();
     }
 
     private void menu() {
-        int operation = 0;
+        int operation;
         boolean hasChosenExit = false;
         while (!hasChosenExit) {
             System.out.println("=== Menu utama ===");
