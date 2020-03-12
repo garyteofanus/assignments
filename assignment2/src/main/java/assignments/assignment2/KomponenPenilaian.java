@@ -5,8 +5,13 @@ public class KomponenPenilaian {
     private ButirPenilaian[] butirPenilaian;
     private int bobot;
 
+    /**
+     * Constructor for class KomponenPenilaian.
+     * @param nama assignment name
+     * @param banyakButirPenilaian number of individual score
+     * @param bobot assignment weight to student final result
+     */
     public KomponenPenilaian(String nama, int banyakButirPenilaian, int bobot) {
-        // Membuat constructor untuk KomponenPenilaian.
         this.nama = nama;
         this.bobot = bobot;
         this.butirPenilaian  = new ButirPenilaian[banyakButirPenilaian];
@@ -34,17 +39,18 @@ public class KomponenPenilaian {
     }
 
     public void masukkanButirPenilaian(int idx, ButirPenilaian butir) {
-        // Memasukkan butir ke butirPenilaian pada index ke-idx.
         this.butirPenilaian[idx] = butir;
     }
 
     public String getNama() {
-        // Mengembalikan nama KomponenPenilaian.
         return this.nama;
     }
 
+    /**
+     * Get average score.
+     * @return average score
+     */
     public double getRerata() {
-        // Mengembalikan rata-rata butirPenilaian.
         double sum = 0;
         int counter = 0;
         for (ButirPenilaian nilai:
@@ -58,21 +64,25 @@ public class KomponenPenilaian {
     }
 
     public double getNilai() {
-        // Mengembalikan rerata yang sudah dikalikan dengan bobot.
         return this.getRerata() * (bobot / 100.0);
     }
 
+    /**
+     * Summary of each individual score.
+     * @return text with summary of each individual score
+     */
     public String getDetail() {
-        // Mengembalikan detail KomponenPenilaian sesuai permintaan soal.
-        StringBuilder text = new StringBuilder(String.format("~~~ %s (%d%%) ~~~\n", this.nama, this.bobot));
+        StringBuilder text = new StringBuilder(String.format("~~~ %s (%d%%) ~~~\n",
+                this.nama, this.bobot));
         if (this.butirPenilaian.length == 1 && this.butirPenilaian[0] != null) {
             text.append(String.format("%s: %s\n", this.nama, this.butirPenilaian[0].toString()));
             text.append(String.format("Kontribusi nilai akhir: %.2f\n\n", this.getNilai()));
             return text.toString();
         } else {
             for (int i = 1; i <= this.butirPenilaian.length; i++) {
-                if (this.butirPenilaian[i-1] != null) {
-                    text.append(String.format("%s %d: %s\n", this.nama, i, this.butirPenilaian[i-1].toString()));
+                if (this.butirPenilaian[i - 1] != null) {
+                    text.append(String.format("%s %d: %s\n",
+                            this.nama, i, this.butirPenilaian[i - 1].toString()));
                 }
             }
             text.append(String.format("Rerata: %.2f\n", this.getRerata()));
@@ -83,7 +93,6 @@ public class KomponenPenilaian {
 
     @Override
     public String toString() {
-        // Mengembalikan representasi String sebuah KomponenPenilaian sesuai permintaan soal.
         return String.format("Rerata %s: %.2f", this.nama, this.getRerata());
     }
 

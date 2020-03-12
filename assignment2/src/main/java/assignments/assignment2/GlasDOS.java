@@ -61,8 +61,12 @@ public class GlasDOS {
         System.out.println();
     }
 
+    /**
+     * Get teaching assistant that match the given code.
+     * @param kode teaching assistant code to be searched
+     * @return object AsistenDosen, else null
+     */
     private AsistenDosen getAsistenDosen(String kode) {
-        // Mengembalikan AsistenDosen yang memiliki kode tertentu.
         for (AsistenDosen asdos:
              asistenDosen) {
             if (asdos.getKode().equalsIgnoreCase(kode)) {
@@ -72,18 +76,29 @@ public class GlasDOS {
         return null;
     }
 
+    /**
+     * Get student that match the given NPM and teaching assistant code.
+     * @param kodeAsdos teaching assistant code
+     * @param npm student's NPM
+     * @return object Mahasiswa, else null
+     */
     private Mahasiswa getMahasiswa(String kodeAsdos, String npm) {
-        // Mengembalikan Mahasiswa dengan NPM dan kodeAsdos tertentu.
         if (this.getAsistenDosen(kodeAsdos) != null) {
             return this.getAsistenDosen(kodeAsdos).getMahasiswa(npm);
         }
         return null;
     }
 
+    /**
+     * Get score sheet that match given teaching assistant code, student's NPM,
+     *      and score component name.
+     * @param kodeAsdos teaching assistant code
+     * @param npm student's NPM
+     * @param namaKomponen score component's name
+     * @return object KomponenPenilaian, else null
+     */
     private KomponenPenilaian getKomponenPenilaian(String kodeAsdos,
                                                    String npm, String namaKomponen) {
-        // Mengembalikan KomponenPenilaian dengan namaKomponen tertentu
-        // dari seorang Mahasiswa dengan NPM tertentu dan kodeAsdos tertentu.
         if (this.getMahasiswa(kodeAsdos, npm) != null) {
             return this.getMahasiswa(kodeAsdos, npm).getKomponenPenilaian(namaKomponen);
         }
@@ -150,7 +165,6 @@ public class GlasDOS {
             System.out.println("~".repeat(asdos.toString().length()));
             System.out.println();
             System.out.println(asdos.rekap());
-            //System.out.println();
         }
         System.out.println("Kembali ke menu utama...");
         System.out.println();

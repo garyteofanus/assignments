@@ -5,17 +5,27 @@ public class Mahasiswa implements Comparable<Mahasiswa> {
     private String nama;
     private KomponenPenilaian[] komponenPenilaian;
 
+    /**
+     * Constructor for class Mahasiswa.
+     *
+     * @param npm student's NPM
+     * @param nama student's name
+     * @param komponenPenilaian student's score sheet that consist of ButirPenilaian object
+     */
     public Mahasiswa(String npm, String nama, KomponenPenilaian[] komponenPenilaian) {
-        // Membuat constructor untuk Mahasiswa.
         this.npm = npm;
         this.nama = nama;
         this.komponenPenilaian = komponenPenilaian;
     }
 
+    /**
+     *  Find matching KomponenPenilaian object.
+     *
+     * @param namaKomponen name of LomponenPenilaian object
+     * @return KomponenPenilaian object that matches the parameter name, null if not found
+     */
     public KomponenPenilaian getKomponenPenilaian(String namaKomponen) {
-        // Mengembalikan KomponenPenilaian yang bernama namaKomponen.
-        // Note: jika tidak ada, kembalikan null atau lempar sebuah Exception.
-        for (KomponenPenilaian komponen:
+        for (KomponenPenilaian komponen :
                 komponenPenilaian) {
             if (komponen.getNama().equalsIgnoreCase(namaKomponen)) {
                 return komponen;
@@ -25,14 +35,14 @@ public class Mahasiswa implements Comparable<Mahasiswa> {
     }
 
     public String getNpm() {
-        // Mengembalikan NPM mahasiswa.
         return this.npm;
     }
 
     /**
-     * Mengembalikan huruf berdasarkan nilai yang diberikan.
-     * @param nilai nilai untuk dicari hurufnya.
-     * @return huruf dari nilai.
+     * Returning letter according total score.
+     *
+     * @param nilai score to calculate the letter
+     * @return letter from score
      */
     private static String getHuruf(double nilai) {
         return nilai >= 85 ? "A" :
@@ -46,20 +56,26 @@ public class Mahasiswa implements Comparable<Mahasiswa> {
     }
 
     /**
-     * Mengembalikan status kelulusan berdasarkan nilaiAkhir yang diberikan.
-     * @param nilaiAkhir nilai akhir mahasiswa.
-     * @return status kelulusan (LULUS/TIDAK LULUS).
+     * Returning graduating status according to given score.
+     *
+     * @param nilaiAkhir end result of student's score
+     * @return graduating status (LULUS / TIDAK LULUS)
      */
     private static String getKelulusan(double nilaiAkhir) {
         return nilaiAkhir >= 55 ? "LULUS" : "TIDAK LULUS";
     }
 
+    /**
+     * Summary of all students data.
+     *
+     * @return string containing all score components with end results,
+     *     letter score, and final result
+     */
     public String rekap() {
-        // Mengembalikan rekapan sesuai dengan permintaan soal.
         StringBuilder text = new StringBuilder();
         double nilaiAkhir = 0;
-        for (KomponenPenilaian nilai:
-             komponenPenilaian) {
+        for (KomponenPenilaian nilai :
+                komponenPenilaian) {
             text.append(nilai).append("\n");
             nilaiAkhir += nilai.getNilai();
         }
@@ -70,16 +86,18 @@ public class Mahasiswa implements Comparable<Mahasiswa> {
     }
 
     public String toString() {
-        // Mengembalikan representasi String dari Mahasiswa sesuai permintaan soal.
         return String.format("%s - %s", this.npm, this.nama);
     }
 
+    /**
+     * Get detailed info about each student.
+     * @return text containing detailed info of each student
+     */
     public String getDetail() {
-        // Mengembalikan detail dari Mahasiswa sesuai permintaan soal.
         StringBuilder text = new StringBuilder();
         double nilaiAkhir = 0;
-        for (KomponenPenilaian nilai:
-             komponenPenilaian) {
+        for (KomponenPenilaian nilai :
+                komponenPenilaian) {
             text.append(nilai.getDetail());
             nilaiAkhir += nilai.getNilai();
         }
@@ -91,8 +109,6 @@ public class Mahasiswa implements Comparable<Mahasiswa> {
 
     @Override
     public int compareTo(Mahasiswa other) {
-        // Mendefinisikan cara membandingkan seorang mahasiswa dengan mahasiswa lainnya.
-        // Hint: bandingkan NPM-nya, String juga punya method compareTo.
         if (this.npm.compareTo(other.getNpm()) > 0) {
             return 1;
         } else if (this.npm.compareTo(other.getNpm()) < 0) {
