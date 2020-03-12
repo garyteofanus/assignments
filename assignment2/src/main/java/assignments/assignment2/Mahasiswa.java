@@ -17,7 +17,7 @@ public class Mahasiswa implements Comparable<Mahasiswa> {
         // Note: jika tidak ada, kembalikan null atau lempar sebuah Exception.
         for (KomponenPenilaian komponen:
                 komponenPenilaian) {
-            if (komponen.getNama().equals(namaKomponen)) {
+            if (komponen.getNama().equalsIgnoreCase(namaKomponen)) {
                 return komponen;
             }
         }
@@ -65,7 +65,7 @@ public class Mahasiswa implements Comparable<Mahasiswa> {
         }
         text.append(String.format("Nilai akhir: %.2f\n", nilaiAkhir));
         text.append(String.format("Huruf: %s\n", getHuruf(nilaiAkhir)));
-        text.append(String.format("%s", getKelulusan(nilaiAkhir)));
+        text.append(String.format("%s\n", getKelulusan(nilaiAkhir)));
         return text.toString();
     }
 

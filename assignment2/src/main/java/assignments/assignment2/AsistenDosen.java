@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class AsistenDosen {
-    private List<Mahasiswa> mahasiswa = new ArrayList<>();
+    private List<Mahasiswa> mahasiswas = new ArrayList<>();
     private String kode;
     private String nama;
 
@@ -23,15 +23,26 @@ public class AsistenDosen {
     public void addMahasiswa(Mahasiswa mahasiswa) {
         // Menambahkan mahasiswa ke dalam daftar mahasiswa dengan mempertahankan urutan menggunakan
         // Collection.sort
-        this.mahasiswa.add(mahasiswa);
-        Collections.sort(this.mahasiswa);
+        this.mahasiswas.add(mahasiswa);
+        Collections.sort(this.mahasiswas);
+    }
+
+    public void removeMahasiswa(Mahasiswa mahasiswa) {
+        // Menghilangkan mahasiswa dari daftar asdos
+        for (int i = 0; i < mahasiswas.size(); i++) {
+            if (mahasiswas.get(i) == mahasiswa) {
+                mahasiswas.remove(i);
+                break;
+            }
+        }
+        Collections.sort(mahasiswas); // Just to make sure
     }
 
     public Mahasiswa getMahasiswa(String npm) {
         // Mengembalikan objek Mahasiswa dengan NPM tertentu dari daftar mahasiswa.
-        if (mahasiswa.size() != 0) {
+        if (mahasiswas.size() != 0) {
             for (Mahasiswa mahasiswa:
-                    mahasiswa) {
+                    mahasiswas) {
                 if (mahasiswa.getNpm().equals(npm)) {
                     return mahasiswa;
                 }
@@ -45,7 +56,7 @@ public class AsistenDosen {
         StringBuilder text = new StringBuilder();
         text.append("~".repeat(Math.max(0, total))).append("\n\n");
         for (Mahasiswa each:
-             mahasiswa) {
+                mahasiswas) {
             text.append(each).append("\n");
             text.append(each.rekap()).append("\n\n");
         }
