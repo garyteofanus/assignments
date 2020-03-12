@@ -18,17 +18,17 @@ public class KomponenPenilaian {
     }
 
     /**
-     * Membuat objek KomponenPenilaian baru berdasarkan bentuk KomponenPenilaian templat.
-     * @param templat templat KomponenPenilaian.
+     * Make new object KomponenPenilaian according to template.
+     * @param templat KomponenPenilaian template.
      */
     private KomponenPenilaian(KomponenPenilaian templat) {
         this(templat.nama, templat.butirPenilaian.length, templat.bobot);
     }
 
     /**
-     * Mengembalikan salinan skema penilaian berdasarkan templat yang diberikan.
-     * @param templat templat skema penilaian sebagai sumber.
-     * @return objek baru yang menyerupai templat.
+     * Get a copy of KomponenPenilaian object according to template.
+     * @param templat source template
+     * @return new object that resembles template
      */
     public static KomponenPenilaian[] salinTemplat(KomponenPenilaian[] templat) {
         KomponenPenilaian[] salinan = new KomponenPenilaian[templat.length];

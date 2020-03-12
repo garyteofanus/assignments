@@ -81,7 +81,7 @@ public class Mahasiswa implements Comparable<Mahasiswa> {
         }
         text.append(String.format("Nilai akhir: %.2f\n", nilaiAkhir));
         text.append(String.format("Huruf: %s\n", getHuruf(nilaiAkhir)));
-        text.append(String.format("%s\n", getKelulusan(nilaiAkhir)));
+        text.append(String.format("%s\n\n", getKelulusan(nilaiAkhir)));
         return text.toString();
     }
 

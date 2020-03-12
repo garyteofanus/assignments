@@ -69,13 +69,11 @@ public class AsistenDosen {
      * @return text with summary of each teaching assistant's student
      */
     public String rekap() {
-        int total = this.kode.length() + this.nama.length() + 3;
         StringBuilder text = new StringBuilder();
-        text.append("~".repeat(Math.max(0, total))).append("\n\n");
         for (Mahasiswa each :
                 mahasiswas) {
             text.append(each).append("\n");
-            text.append(each.rekap()).append("\n\n");
+            text.append(each.rekap());
         }
         return text.toString();
     }
