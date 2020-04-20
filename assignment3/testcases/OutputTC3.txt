@@ -1,0 +1,5 @@
+Rantai penyebaran PEKERJA JASA Sasari: PEKERJA JASA Sasari berstatus negatif
+Rantai penyebaran PEKERJA JASA Sasari: PEKERJA JASA Borman -> TOMBOL LIFT LiftTimur -> PEKERJA JASA Sasari
+Rantai penyebaran PEKERJA JASA Elang: PEKERJA JASA Elang berstatus negatif
+Rantai penyebaran PEKERJA JASA Elang: PEKERJA JASA Elang berstatus negatif
+CLEANING SERVICE DekDepe membersihkan 2 benda
