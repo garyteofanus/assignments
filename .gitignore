@@ -1,5 +1,6 @@
 # Customized ignores
 **/*.class
+assignment3/testcases/out*.txt
 
 # IDEs and text editor configurations
 # Delete these if you want to use gitignore.io's instead.
