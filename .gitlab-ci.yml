@@ -12,6 +12,8 @@ build:
     paths:
       - assignment*/build
       - .gradle
+  rules:
+    - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
 
 checkstyle:a1:
   stage: test
