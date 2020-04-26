@@ -63,8 +63,8 @@ test:a2:
 diff:a2:
   stage: test
   script:
-    - "gradle :assignment2:run --console plain --quiet < assignment2/testcases/in1.txt | diff assignment2/testcases/out1.txt - || true"
-    - "gradle :assignment2:run --console plain --quiet < assignment2/testcases/in2.txt | diff assignment2/testcases/out2.txt - || true"
+    - "gradle :assignment2:run --console plain --quiet < assignment2/testcases/in1.txt | diff assignment2/testcases/.out/out1.txt - || true"
+    - "gradle :assignment2:run --console plain --quiet < assignment2/testcases/in2.txt | diff assignment2/testcases/.out/out2.txt - || true"
   cache:
     key: "$CI_COMMIT_REF_NAME"
     paths:
@@ -98,8 +98,8 @@ diff:a3:
     for i in {1..5}
     do
       echo "Running text test case $i/5..."
-      gradle :assignment3:run --console plain --quiet < "assignment3/testcases/in$i.txt"
-      diff "assignment3/testcases/out$i.txt" "assignment3/testcases/OutputTC$i.txt"
+      gradle :assignment3:run --console plain --quiet < "assignment3/testcases/.in/in$i.txt"
+      diff "assignment3/testcases/.out/out$i.txt" "assignment3/testcases/OutputTC$i.txt"
     done
   cache:
     key: "$CI_COMMIT_REF_NAME"

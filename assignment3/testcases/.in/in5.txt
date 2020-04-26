@@ -1,4 +1,4 @@
 TEXT
 testcases/InputTC5.txt
 TEXT
-testcases/out5.txt
+testcases/.out/out5.txt
