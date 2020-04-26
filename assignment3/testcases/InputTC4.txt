@@ -18,7 +18,7 @@ INTERAKSI Suneo PintuKemanaSaja
 INTERAKSI Giant PintuKemanaSaja
 INTERAKSI Dorami PintuKemanaSaja
 Rantai Doraemon
-Rantai Dorami 
+Rantai Dorami
 BERSIHKAN Doraemon PintuKemanaSaja
 INTERAKSI Nobita PintuKemanaSaja
 RANTAI Nobita
@@ -27,7 +27,7 @@ INTERAKSI Giant MRT
 BERSIHKAN Doraemon MRT
 INTERAKSI Nobita MRT
 RANTAI Nobita
-INTERAKSI Dorami MRT 
+INTERAKSI Dorami MRT
 SEMBUHKAN Shizuka Suneo
 SEMBUHKAN Shizuka Giant
 SEMBUHKAN Shizuka Doraemon
@@ -41,4 +41,3 @@ TOTAL_SEMBUH_PETUGAS_MEDIS Shizuka
 TOTAL_SEMBUH_MANUSIA
 RANTAI Nobita
 EXIT
-

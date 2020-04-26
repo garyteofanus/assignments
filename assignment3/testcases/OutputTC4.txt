@@ -1,8 +1,8 @@
 Rantai penyebaran JURNALIS Dekisugi: OJOL Suneo -> OJOL Giant -> JURNALIS Dekisugi
 Rantai penyebaran CLEANING SERVICE Doraemon: OJOL Suneo -> CLEANING SERVICE Doraemon
 Rantai penyebaran PEKERJA JASA Dorami: OJOL Suneo -> OJOL Giant -> PINTU PintuKemanaSaja -> PEKERJA JASA Dorami
-Rantai penyebaran JURNALIS Nobita: JURNALIS Nobita berstatus negatif
-Rantai penyebaran JURNALIS Nobita: JURNALIS Nobita berstatus negatif
+assignments.assignment3.BelumTertularException: JURNALIS Nobita berstatus negatif
+assignments.assignment3.BelumTertularException: JURNALIS Nobita berstatus negatif
 OJOL Suneo telah menyebarkan virus COVID ke 6 objek
 OJOL Suneo telah menyebarkan virus COVID dan masih teridentifikasi positif sebanyak 1 objek
 CLEANING SERVICE Doraemon membersihkan 2 benda
