@@ -62,17 +62,16 @@ gradlew.bat :assignment3:test
 > Tips: kamu bisa memeriksa hasil *unit test* dalam bentuk dokumen HTML. Lihat dokumen
 > HTML tersebut di dalam folder `build\reports` yang ada di direktori ini.
 
-Untuk melihat output program dengan *test case* input yang disediakan:
+Untuk melihat output program dengan input kasus uji yang disediakan, jalankan:
 
 ```bash
-gradlew.bat :assignment3:run --console plain --quiet < assignment3\testcases\InputTC1.txt
-gradlew.bat :assignment3:run --console plain --quiet < assignment3\testcases\InputTC2.txt
+gradlew.bat :assignment3:run --console plain --quiet
 ```
 
-Kamu bisa membandingkan *output*-nya dengan berkas berawalan `OutputTC` yang ada di
-direktori [`testcases`][testcases].
-
-*Hint*: kamu juga bisa menggunakan `>` untuk menyimpan output ke dalam sebuah *file*.
+Lalu gunakan mode input `TEXT` dan ketik [`testcases\InputTC1.txt`][input-tc1]
+untuk menggunakan kasus uji yang pertama. Terdapat 5 buah kasus uji yang
+diberikan, yakni `InputTC{1..5}.txt`. Kamu bisa membandingkan *output*-nya
+dengan berkas `OutputTC{1..5}.txt`.
 
 Jika kamu tidak ingin menggunakan Gradle, kamu juga bisa melakukan kompilasi
 dan menjalankan program dengan `javac` dan `java` seperti biasa. Masuk ke
@@ -84,6 +83,37 @@ cd src\main\java
 javac assignments\assignment3\*.java
 java assignments.assignment3.Simulator
 ```
+
+Namun, perlu diperhatikan bahwa jika menggunakan Gradle, *path* berkas yang
+kamu berikan akan relatif terhadap direktori [`assignment3`][assignment3] (yang
+di dalamnya terdapat folder `src` dan `testcases`). Jika tidak menggunakan
+Gradle, maka *path* berkas yang kamu berikan akan relatif terhadap direktori
+[`src/main/java`][src-main-java].
+
+Jika tidak yakin, kamu bisa menggunakan *absolute path* seperti contoh berikut:
+
+- di Windows
+
+  ```
+  C:\Users\username\folderku\inputPunyaku.txt
+  ```
+
+- di Mac
+
+  ```
+  /Users/username/folderku/inputPunyaku.txt
+  ```
+
+- di Linux
+
+  ```
+  /home/username/folderku/inputPunyaku.txt
+  ```
+
+Cara dengan *absolute path* seperti di atas pasti bisa digunakan baik dengan
+Gradle maupun tidak.
+
+Aturan yang sama juga berlaku untuk berkas *output*.
 
 ## Pengumpulan
 
@@ -139,4 +169,6 @@ Pipelines.
 
 [dokumen tp3]: https://docs.google.com/document/d/1qJxGpnxWUHWyeRbyOXP0rkGheilOUGk8r9jvJxRRbOk/export?format=pdf&attachment=false
 [root-readme]: ../README.md#memulai
-[testcases]: assignment3/testcases
+[input-tc1]: assignment3/testcases/InputTC1.txt
+[assignment3]: assignment3
+[src-main-java]: assignment3/src/main/java
