@@ -16,7 +16,7 @@ public class Simulator{
       }
         System.out.println("Silahkan masukkan metode output yang anda inginkan (TEXT/TERMINAL):");
         String outputType = scanner.nextLine();
-        if(inputType.equalsIgnoreCase("text")){
+        if(outputType.equalsIgnoreCase("text")){
             outputFile = scanner.nextLine();
       }
       InputOutput io = new InputOutput(inputType, inputFile, outputType, outputFile);
