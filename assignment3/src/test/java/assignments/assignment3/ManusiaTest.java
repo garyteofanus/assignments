@@ -8,9 +8,9 @@ public class ManusiaTest {
     @Test
     public void testTambahSembuh(){
         Ojol ojol = new Ojol("KangJek");
-        
+        int jumlahSembuh = Manusia.getJumlahSembuh();
         ojol.tambahSembuh();
 
-        assertEquals(1, Manusia.getJumlahSembuh());
+        assertEquals(jumlahSembuh + 1, Manusia.getJumlahSembuh());
     }
 }
