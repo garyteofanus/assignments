@@ -118,7 +118,7 @@ Aturan yang sama juga berlaku untuk berkas *output*.
 ## Pengumpulan
 
 Simpan pekerjaan kamu, lalu lakukan `add`, `commit`, dan `push` dengan Git.
-*Push* solusi kamu **sebelum 9 Mei 2020 pukul 23.55**. Disarankan untuk
+*Push* solusi kamu **sebelum 10 Mei 2020 pukul 23.55**. Disarankan untuk
 *push* **sebelum pukul 22.00** untuk mengantisipasi antrean pada GitLab
 Pipelines.
 
