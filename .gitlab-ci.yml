@@ -101,7 +101,7 @@ diff:a3:
     do
       echo "Running text test case $i/5..."
       gradle :assignment3:run --console plain --quiet < "assignment3/testcases/.in/in$i.txt"
-      diff "assignment3/testcases/.out/out$i.txt" "assignment3/testcases/OutputTC$i.txt"
+      diff "assignment3/testcases/.out/out$i.txt" "assignment3/testcases/OutputTC$i.txt" || true
     done
   cache:
     key: "$CI_COMMIT_REF_NAME"
