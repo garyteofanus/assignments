@@ -74,3 +74,39 @@ diff:a2:
     - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
     - changes:
       - assignment2/**/*
+
+test:a3:
+  stage: test
+  script: gradle :assignment3:test
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    paths:
+      - assignment3/build
+      - .gradle
+  artifacts:
+    paths:
+      - assignment3
+    when: always
+  rules:
+    - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
+    - changes:
+      - assignment3/**/*
+
+diff:a3:
+  stage: test
+  script: |
+    for i in {1..5}
+    do
+      echo "Running text test case $i/5..."
+      gradle :assignment3:run --console plain --quiet < "assignment3/testcases/in$i.txt"
+      diff "assignment3/testcases/out$i.txt" "assignment3/testcases/OutputTC$i.txt"
+    done
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    paths:
+      - assignment3/build
+      - .gradle
+  rules:
+    - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
+    - changes:
+      - assignment3/**/*
