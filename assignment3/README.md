@@ -5,13 +5,15 @@ Semester Genap 2019/2020
 
 Dokumen ini berisi deskripsi dan informasi umum yang dibutuhkan untuk menyelesaikan
 Tugas Pemrograman 3 mata kuliah DDP 2. Tugas Pemrograman ini didesain untuk
-mengimplementasikan konsep Pemrograman Berorientasi Objek dengan memanfaatkan abstract class dan interfaces. Serta melakukan Exception handling dan text I/O.
+mengimplementasikan konsep Pemrograman Berorientasi Objek dengan memanfaatkan
+*abstract classes* dan *interfaces* serta melakukan *exception handling* dan
+*text I/O*.
 
 Tugas Pemrograman ini mencakup materi berikut:
 
 - Materi yang dicakup Tugas Pemrograman 2
-- *Abstract Classes*
-- *Interfaces*
+- *Abstract Classes & Interfaces*
+- *Inheritance & Polymorphism*
 - *Exception Handling*
 - *Text I/O*
 
@@ -29,7 +31,7 @@ Tugas Pemrograman ini mencakup materi berikut:
 
 ## Latar belakang dan deskripsi
 
-Silakan baca [dokumen soal][dokumen tp2].
+Silakan baca [dokumen soal][dokumen tp3].
 
 ## Persiapan
 
@@ -48,13 +50,13 @@ terminal/Command Prompt.
 Untuk menjalankan program:
 
 ```bash
-> gradlew.bat :assignment3:run --console plain --quiet
+gradlew.bat :assignment3:run --console plain --quiet
 ```
 
 Untuk menguji program dengan *unit test* yang disediakan:
 
 ```bash
-> gradlew.bat :assignment3:test
+gradlew.bat :assignment3:test
 ```
 
 > Tips: kamu bisa memeriksa hasil *unit test* dalam bentuk dokumen HTML. Lihat dokumen
@@ -63,43 +65,39 @@ Untuk menguji program dengan *unit test* yang disediakan:
 Untuk melihat output program dengan *test case* input yang disediakan:
 
 ```bash
-> gradlew.bat :assignment3:run --console plain --quiet < assignment3\testcases\InputTC1.txt
-> gradlew.bat :assignment3:run --console plain --quiet < assignment3\testcases\InputTC2.txt
+gradlew.bat :assignment3:run --console plain --quiet < assignment3\testcases\InputTC1.txt
+gradlew.bat :assignment3:run --console plain --quiet < assignment3\testcases\InputTC2.txt
 ```
 
-Kamu bisa membandingkan *output*-nya dengan berkas berawalan `OutputTC` yang ada di direktori
-[testcases][testcases].
+Kamu bisa membandingkan *output*-nya dengan berkas berawalan `OutputTC` yang ada di
+direktori [`testcases`][testcases].
 
 *Hint*: kamu juga bisa menggunakan `>` untuk menyimpan output ke dalam sebuah *file*.
 
 Jika kamu tidak ingin menggunakan Gradle, kamu juga bisa melakukan kompilasi
 dan menjalankan program dengan `javac` dan `java` seperti biasa. Masuk ke
 direktori `src\main\java`, *compile* semua berkas `.java` kamu, dan jalankan
-*main class*-nya (Dalam hal ini adalah Simulator.java).
+*main class*-nya (dalam hal ini adalah `Simulator.java`).
 
 ```bash
-> cd src\main\java
-src\main\java> javac assignments\assignment3\*.java
-src\main\java> java assignments.assignment3.Simulator
+cd src\main\java
+javac assignments\assignment3\*.java
+java assignments.assignment3.Simulator
 ```
 
 ## Pengumpulan
 
 Simpan pekerjaan kamu, lalu lakukan `add`, `commit`, dan `push` dengan Git.
-*Push* solusi kamu **sebelum [Taruh tanggal disini] pukul 23.55**. Disarankan untuk
+*Push* solusi kamu **sebelum 9 Mei 2020 pukul 23.55**. Disarankan untuk
 *push* **sebelum pukul 22.00** untuk mengantisipasi antrean pada GitLab
 Pipelines.
-
-Jangan lupa bahwa ada pengumpulan secara terpisah di SCeLE untuk Class Diagram
-dengan *deadline* yang sama. Untuk lebih detailnya, silakan lihat dokumen soal
-dan SCeLE.
 
 ## Daftar pekerjaan
 
 ### Daftar pekerjaan wajib
 
 - [ ] Buat sekurang-kurangnya 1 *commit* yang mengandung progres kamu dalam
-      mengerjakan Tugas Pemrograman 2.
+      mengerjakan Tugas Pemrograman 3.
 - [ ] *Push* *commit* kamu ke repositori Git *online* yang ada pada proyek
       GitLab kamu.
 - [ ] Implementasikan *class* `World` dengan benar.
@@ -108,20 +106,37 @@ dan SCeLE.
 - [ ] Implementasikan *class* `Status` dengan benar.
 - [ ] Implementasikan *class* `Benda` dengan benar.
 - [ ] Implementasikan *class* `Manusia` dengan benar.
-- [ ] Implementasikan *class* yang merupakan subclass dari *class* `Benda`, yaitu `AngkutanUmum`, `PeganganTangga`, `Pintu`, dan `TombolLift` dengan benar.
-- [ ] Implementasikan *class* yang merupakan subclass dari *class* `Manusia`, yaitu `CleaningService`, `Jurnalis`, `PekerjaJasa`, `PetugasMedis`, dan `Ojol` dengan benar.
-- [ ] Implementasikan *class* yang merupakan subclass dari *class* `Status`, yaitu `Positif` dan `Negatif` dengan benar.
+- [ ] Implementasikan *class* yang merupakan subclass dari *class* `Benda`, yaitu
+      `AngkutanUmum`, `PeganganTangga`, `Pintu`, dan `TombolLift` dengan benar.
+- [ ] Implementasikan *class* yang merupakan subclass dari *class* `Manusia`, yaitu
+      `CleaningService`, `Jurnalis`, `PekerjaJasa`, `PetugasMedis`, dan `Ojol` dengan benar.
+- [ ] Implementasikan *class* yang merupakan subclass dari *class* `Status`, yaitu
+      `Positif` dan `Negatif` dengan benar.
 - [ ] Implementasikan *class* `BelumTertularException` dengan benar.
 - [ ] Demonstrasikan program kamu ke asdos kamu.
 
-## Penilaian TODO
+### Daftar pekerjaan bonus (opsional)
 
-- 10% Class Diagram dalam Unified Modeling Language (UML)
-- 50% kebenaran program
+<sup><sub>Yeey, ada bonus!</sub></sup>
+
+- [ ] Implementasikan GUI untuk program ini.\
+      Tidak ada ketentuan khusus mengenai GUI program. Silakan berkreasi dalam
+      implementasi *layout*, *widgets*, dsb. Usahakan untuk memanfaatkan ulang
+      (*reuse*) kode yang sudah ada sebaik mungkin agar kamu tidak perlu
+      mengimplementasikan ulang fitur-fitur yang ada. Kamu boleh mengimplementasikan
+      GUI hanya untuk sebagian fitur saja (misalnya seleksi antara *output*
+      `TEXT`/`TERMINAL`), tetapi nilai sempurna hanya akan diberikan jika tiap
+      *query* dapat dilakukan melalui GUI.\
+      **Pastikan program asli (tanpa GUI) tetap bekerja sebagaimana mestinya
+      dan tetap lulus tes**.
+
+## Penilaian
+
+- 60% kebenaran program
 - 30% demonstrasi program
 - 10% kerapian dan dokumentasi
-- +5% implementasi bonus
+- +10% implementasi bonus
 
-[dokumen tp2]: https://docs.google.com/document/d/1qJxGpnxWUHWyeRbyOXP0rkGheilOUGk8r9jvJxRRbOk/edit?usp=sharing
+[dokumen tp3]: https://docs.google.com/document/d/1qJxGpnxWUHWyeRbyOXP0rkGheilOUGk8r9jvJxRRbOk/export?format=pdf&attachment=false
 [root-readme]: ../README.md#memulai
 [testcases]: assignment3/testcases
