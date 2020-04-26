@@ -10,6 +10,7 @@ Semester Genap 2019/2020
 1. Soal Tugas Pemrograman
     1. [Tugas Pemrograman 1: Kode-Kode Privab][tp1]
     2. [Tugas Pemrograman 2: GlasDOS][tp2]
+    3. [Tugas Pemrograman 3: Corona][tp3]
 2. [Memulai](#memulai)
 3. [Mengerjakan Tugas Pemrograman](#mengerjakan-tugas-pemrograman)
 4. [Mendapatkan pembaruan dari *upstream*](#mendapatkan-pembaruan-dari-upstream)
@@ -219,6 +220,7 @@ yang telah dijelaskan dalam perkuliahan.
 
 [tp1]: assignment1/README.md
 [tp2]: assignment2/README.md
+[tp3]: assignment3/README.md
 [fork]: ../-/forks/new
 [repositori-pusat]: https://gitlab.com/DDP2-CSUI/2020/assignments
 [panduan-commit]: https://chris.beams.io/posts/git-commit
