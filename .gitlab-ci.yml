@@ -40,7 +40,7 @@ test:a1:
     when: always
   rules:
     - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
-    - changes:
+      changes:
       - assignment1/**/*
 
 test:a2:
@@ -57,7 +57,7 @@ test:a2:
     when: always
   rules:
     - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
-    - changes:
+      changes:
       - assignment2/**/*
 
 diff:a2:
@@ -72,7 +72,7 @@ diff:a2:
       - .gradle
   rules:
     - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
-    - changes:
+      changes:
       - assignment2/**/*
 
 test:a3:
@@ -89,7 +89,7 @@ test:a3:
     when: always
   rules:
     - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
-    - changes:
+      changes:
       - assignment3/**/*
 
 diff:a3:
@@ -108,5 +108,5 @@ diff:a3:
       - .gradle
   rules:
     - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
-    - changes:
+      changes:
       - assignment3/**/*
