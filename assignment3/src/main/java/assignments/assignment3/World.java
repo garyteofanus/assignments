@@ -1,11 +1,12 @@
 package assignments.assignment3;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class World{
-  
-    public ArrayList<Carrier> listCarrier;
-    
+
+    public List<Carrier> listCarrier;
+
     public World(){
         // TODO: Buat constructor untuk class World
     }
