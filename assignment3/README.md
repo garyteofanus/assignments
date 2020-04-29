@@ -162,12 +162,12 @@ Pipelines.
 
 ## Penilaian
 
-- 10% Implementasi interface Status dan Concrete Classnya
-- 30% Implementasi class Carrier
-- 20% implementasi Class InputOutput
-- 10% Impelementasi concrete class dari Carrier
-- 20% Demostrasi
-- 10% Kerapihan dan Dokumentasi
+- 10% implementasi *interface* `Status` dan *concrete class*-nya
+- 30% implementasi *class* `Carrier`
+- 20% implementasi *class* `InputOutput`
+- 10% implementasi *concrete class* dari `Carrier`
+- 20% demonstrasi program
+- 10% kerapian dan Dokumentasi
 - +10% implementasi bonus
 
 [dokumen tp3]: https://docs.google.com/document/d/1qJxGpnxWUHWyeRbyOXP0rkGheilOUGk8r9jvJxRRbOk/export?format=pdf&attachment=false
