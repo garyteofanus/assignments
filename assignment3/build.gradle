@@ -1,5 +1,15 @@
+plugins {
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
 application {
     mainClassName = 'assignments.assignment3.Simulator'
+    // Change Simulator to SimulatorGUI if you implement it.
+}
+
+javafx {
+    version = "14"  // Change if needed.
+    modules = [ 'javafx.controls' ]  // Add more modules if needed.
 }
 
 run {
