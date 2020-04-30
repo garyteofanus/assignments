@@ -96,6 +96,8 @@ test:a3:
 
 diff:a3:
   stage: test
+  before_script:
+    - sed -i 's/assignment3.SimulatorGUI/assignment3.Simulator/' assignment3/build.gradle
   script: |
     for i in {1..5}
     do
