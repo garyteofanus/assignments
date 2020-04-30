@@ -105,6 +105,7 @@ diff:a3:
       gradle :assignment3:run --console plain --quiet < "assignment3/testcases/.in/in$i.txt"
       diff "assignment3/testcases/.out/out$i.txt" "assignment3/testcases/OutputTC$i.txt" || true
     done
+  allow_failure: true
   cache:
     key: "$CI_COMMIT_REF_NAME"
     paths:
