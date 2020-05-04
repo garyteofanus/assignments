@@ -12,6 +12,8 @@ build:
     paths:
       - assignment*/build
       - .gradle
+  rules:
+    - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
 
 checkstyle:a1:
   stage: test
@@ -22,6 +24,9 @@ checkstyle:a1:
     paths:
       - assignment1/build
       - .gradle
+  rules:
+    - changes:
+      - assignment1/**/*
 
 test:a1:
   stage: test
@@ -37,6 +42,8 @@ test:a1:
     when: always
   rules:
     - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
+      changes:
+      - assignment1/**/*
 
 test:a2:
   stage: test
@@ -52,12 +59,14 @@ test:a2:
     when: always
   rules:
     - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
+      changes:
+      - assignment2/**/*
 
 diff:a2:
   stage: test
   script:
-    - "gradle :assignment2:run --console plain --quiet < assignment2/testcases/in1.txt | diff assignment2/testcases/out1.txt - || true"
-    - "gradle :assignment2:run --console plain --quiet < assignment2/testcases/in2.txt | diff assignment2/testcases/out2.txt - || true"
+    - "gradle :assignment2:run --console plain --quiet < assignment2/testcases/in1.txt | diff assignment2/testcases/.out/out1.txt - || true"
+    - "gradle :assignment2:run --console plain --quiet < assignment2/testcases/in2.txt | diff assignment2/testcases/.out/out2.txt - || true"
   cache:
     key: "$CI_COMMIT_REF_NAME"
     paths:
@@ -65,3 +74,44 @@ diff:a2:
       - .gradle
   rules:
     - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
+      changes:
+      - assignment2/**/*
+
+test:a3:
+  stage: test
+  script: gradle :assignment3:test
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    paths:
+      - assignment3/build
+      - .gradle
+  artifacts:
+    paths:
+      - assignment3
+    when: always
+  rules:
+    - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
+      changes:
+      - assignment3/**/*
+
+diff:a3:
+  stage: test
+  before_script:
+    - sed -i 's/assignment3.SimulatorGUI/assignment3.Simulator/' assignment3/build.gradle
+  script: |
+    for i in {1..5}
+    do
+      echo "Running text test case $i/5..."
+      gradle :assignment3:run --console plain --quiet < "assignment3/testcases/.in/in$i.txt"
+      diff "assignment3/testcases/.out/out$i.txt" "assignment3/testcases/OutputTC$i.txt" || true
+    done
+  allow_failure: true
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    paths:
+      - assignment3/build
+      - .gradle
+  rules:
+    - if: '$CI_PROJECT_NAMESPACE != "DDP2-CSUI/2020"'
+      changes:
+      - assignment3/**/*
