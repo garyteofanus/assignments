@@ -1,7 +1,7 @@
 package assignments.assignment2;
 
 public class ButirPenilaian {
-    private static final int PENALTI_KETERLAMBATAN = 20;
+    //private static final int PENALTI_KETERLAMBATAN = 20;
     private double nilai;
     private boolean terlambat;
 

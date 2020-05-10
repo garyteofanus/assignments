@@ -1,22 +1,31 @@
 package assignments.assignment3;
 
-public class Positif implements Status{
+public class Positif implements Status {
   
-    public String getStatus(){
+    public String getStatus() {
         return "Positif";
     }
 
-    public void tularkan(Carrier penular, Carrier tertular){
-        // TODO: Implementasikan apabila object Penular melakukan interaksi dengan object tertular
-        // Hint: Handle kasus ketika keduanya benda dapat dilakukan disini
-        if (penular.getTipe().equalsIgnoreCase("Manusia") && tertular.getTipe().equalsIgnoreCase("Manusia")) {
+    /**
+     * Infect other Carrier object, react relative to penular and tertular type.
+     * @param penular Carrier object infecting (must be COVID Positive)
+     * @param tertular Carrier object infected
+     */
+    public void tularkan(Carrier penular, Carrier tertular) {
+        
+        String tipePenular = penular.getTipe();
+        String tipeTertular = tertular.getTipe();
+
+        if (tipePenular.equalsIgnoreCase("Manusia") && tipeTertular.equalsIgnoreCase("Manusia")) {
             tertular.ubahStatus("Positif");
-        } else if (penular.getTipe().equalsIgnoreCase("Manusia") && tertular.getTipe().equalsIgnoreCase("Benda")) {
+        } else if (tipePenular.equalsIgnoreCase("Manusia") 
+            && tipeTertular.equalsIgnoreCase("Benda")) {
             ((Benda) tertular).tambahPersentase();
             if (((Benda) tertular).getPersentaseMenular() >= 100) {
                 tertular.ubahStatus("Positif");
             }
-        } else if (penular.getTipe().equalsIgnoreCase("Benda") && tertular.getTipe().equalsIgnoreCase("Manusia")) {
+        } else if (tipePenular.equalsIgnoreCase("Benda") 
+            && tipeTertular.equalsIgnoreCase("Manusia")) {
             tertular.ubahStatus("Positif");
         }
     }

@@ -1,18 +1,22 @@
 package assignments.assignment3;
 
-public class CleaningService extends Manusia{
-  		
+public class CleaningService extends Manusia {
+
     private int jumlahDibersihkan;
 
-    public CleaningService(String nama){
-        // TODO: Buat constructor untuk CleaningService.
-        // Hint: Akses constructor superclass-nya
+    /**
+     * Constructor for class CleaningService.
+     * @param nama Object CleaningService name
+     */
+    public CleaningService(String nama) {
         super(nama);
     }
 
-    public void bersihkan(Benda benda){
-        // TODO: Implementasikan apabila objek CleaningService ini membersihkan benda
-        // Hint: Update nilai atribut jumlahDibersihkan
+    /**
+     * Clean other things by changing their status from Positive to Negative.
+     * @param benda Object benda to be cleaned
+     */
+    public void bersihkan(Benda benda) {
         if (benda.getStatusCovid().equalsIgnoreCase("Negatif")) {
             benda.setPersentaseMenular(0);
         } else if (benda.getStatusCovid().equalsIgnoreCase("Positif")) {
@@ -27,14 +31,12 @@ public class CleaningService extends Manusia{
         }
     }
 
-    public int getJumlahDibersihkan(){
-        // TODO: Kembalikan nilai dari atribut jumlahDibersihkan
+    public int getJumlahDibersihkan() {
         return this.jumlahDibersihkan;
     }
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
         return String.format("CLEANING SERVICE %s", this.getNama());
     }
 

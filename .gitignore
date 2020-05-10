@@ -198,4 +198,8 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
+### Personal Testing Script ###
+*.py
+*.txt
+
 # End of https://www.gitignore.io/api/gradle,eclipse,intellij,visualstudiocode
