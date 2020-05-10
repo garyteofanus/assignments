@@ -14,6 +14,8 @@ public class CleaningService extends Manusia {
 
     /**
      * Clean other things by changing their status from Positive to Negative.
+     * All instance of class Benda will be COVID Positive if persentaseMenular >= 100,
+     * and cleaning will reset their persentaseMenular back to 0.
      * @param benda Object benda to be cleaned
      */
     public void bersihkan(Benda benda) {
@@ -25,9 +27,7 @@ public class CleaningService extends Manusia {
         }
         this.jumlahDibersihkan++;
         for (Carrier carrier : benda.getRantaiPenular()) {
-            if (carrier != benda) {
-                carrier.setAktifKasusDisebabkan(carrier.getAktifKasusDisebabkan() - 1);
-            }
+            carrier.setAktifKasusDisebabkan(carrier.getAktifKasusDisebabkan() - 1);
         }
     }
 

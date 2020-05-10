@@ -10,6 +10,10 @@ public class Pintu extends Benda {
         super(name);
     }
 
+    /**
+     * Add 30 eto persentaseMenular ach time instance of this class is interacting with instance
+     * of class Manusia.
+     */
     @Override
     public void tambahPersentase() {
         this.setPersentaseMenular(this.getPersentaseMenular() + 30);

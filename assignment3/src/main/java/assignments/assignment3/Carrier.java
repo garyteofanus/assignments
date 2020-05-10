@@ -67,7 +67,7 @@ public abstract class Carrier {
     }
 
     /**
-     * Interact with other carrier.
+     * Interact with other carrier. Make sure that both object are not instance of class Benda
      * @param lain Other Carrier object to interact with
      */
     public void interaksi(Carrier lain) {
@@ -93,6 +93,9 @@ public abstract class Carrier {
         }
     }
 
+    /**
+     * Implement toStrig according to specification for each child.
+     */
     public abstract String toString();
 
 }

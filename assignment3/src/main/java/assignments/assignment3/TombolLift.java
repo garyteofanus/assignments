@@ -10,6 +10,10 @@ public class TombolLift extends Benda {
         super(name);
     }
 
+    /**
+     * Add 20 to persentaseMenular each time instance of this class 
+     * is interacting with instance of class Manusia.
+     */
     @Override
     public void tambahPersentase() {
         this.setPersentaseMenular(this.getPersentaseMenular() + 20);

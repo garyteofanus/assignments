@@ -15,8 +15,10 @@ public class PetugasMedis extends Manusia {
     /**
      * Cure other human and subsequently do the following things for the patient:
      *      1. Reset rantaiPenular list
-     *      2. Increase jumlahDisembuhkan
-     *      3. Increase 
+     *      2. Increase jumlahDisembuhkan for the medic
+     *      3. Change patient COVID status to Negative
+     *      4. Increase number of human healed
+     *      5. Decrease aktifKasusDisebabkan on each Carrier in patient rantaiPenular
      */
     public void obati(Manusia manusia) {
         manusia.ubahStatus("Negatif");

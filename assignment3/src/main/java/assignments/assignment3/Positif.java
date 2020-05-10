@@ -8,6 +8,7 @@ public class Positif implements Status {
 
     /**
      * Infect other Carrier object, react relative to penular and tertular type.
+     * Handling changing of COVID status.
      * @param penular Carrier object infecting (must be COVID Positive)
      * @param tertular Carrier object infected
      */

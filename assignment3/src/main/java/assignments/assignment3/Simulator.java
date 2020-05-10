@@ -13,13 +13,17 @@ public class Simulator {
         String outputFile = "NOTHING";
         System.out.println("Selamat datang di program simulasi COVID-19!");
         
-        System.out.println("Silahkan masukkan metode input yang anda inginkan (TEXT/TERMINAL):");
+        System.out.println("Silahkan masukkan metode input "
+            + "yang anda inginkan (TEXT/TERMINAL/GUI):");
         String inputType = scanner.nextLine();
         if (inputType.equalsIgnoreCase("text")) {
             inputFile = scanner.nextLine();
+        } else if (inputType.equalsIgnoreCase("gui")) {
+            SimulatorGUI.main(args);
         }
         
-        System.out.println("Silahkan masukkan metode output yang anda inginkan (TEXT/TERMINAL):");
+        System.out.println("Silahkan masukkan metode output "
+            + "yang anda inginkan (TEXT/TERMINAL):");
         String outputType = scanner.nextLine();
         if (outputType.equalsIgnoreCase("text")) {
             outputFile = scanner.nextLine();
