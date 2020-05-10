@@ -27,11 +27,6 @@ public class SimulatorGUI extends Application {
         gp.setVgap(10);
         gp.setHgap(10);
 
-        GridPane gp2 = new GridPane();
-        gp2.setAlignment(Pos.CENTER);
-        gp2.setVgap(10);
-        gp2.setHgap(10);
-
         this.world = new World();
 
         // Greetings and get input, output method
@@ -39,7 +34,7 @@ public class SimulatorGUI extends Application {
         Text greetings = new Text("Selamat datang di program simulasi COVID-19!");
         greetings.setFont(new Font("Arial", 20));
         title.getChildren().add(greetings);
-        gp.add(title, 0, 0, 2, 1);
+        gp.add(title, 0, 0);
 
         // Query
         gp.add(new Label("Select your query: "), 0, 1, 1, 1);
@@ -58,14 +53,8 @@ public class SimulatorGUI extends Application {
         TextField object2 = new TextField();
         gp.add(object2, 1, 3, 1, 1);
 
-        Button simulate = new Button("Simulate!");
-        gp.add(simulate, 0, 4, 1, 1);
-
-        Button undo = new Button("Undo");
-        gp.add(undo, 1, 4, 1, 1);
-
-        Button next = new Button("Next");
-        gp.add(next, 2, 4, 1, 1);
+        Button simulate = new Button("Simulate");
+        gp.add(simulate, 0, 4);
 
         EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
@@ -149,14 +138,10 @@ public class SimulatorGUI extends Application {
                 object2.clear();
             }
         };
-        next.setOnAction(event);
-
-        Stage listOfQueries = new Stage();
-        listOfQueries.setTitle("List Of Queries");
-        listOfQueries.show();
+        simulate.setOnAction(event);
 
         stage.setTitle("COVID-19 Simulator");
-        Scene scene = new Scene(gp, 640, 480);
+        Scene scene = new Scene(gp, 1000, 1000);
         stage.setScene(scene);
         stage.show();
     }
