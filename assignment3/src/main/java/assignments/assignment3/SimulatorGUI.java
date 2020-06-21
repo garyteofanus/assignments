@@ -42,7 +42,8 @@ public class SimulatorGUI extends Application {
             "Bersihkan", "Rantai", "Total Kasus dari Objek", "Aktif Kasus dari Objek",
             "Total Sembuh Manusia", "Total Sembuh Petugas Medis",
             "Total Bersih Cleaning Service", "Exit" };
-        ChoiceBox query = new ChoiceBox(FXCollections.observableArrayList(queryList));
+        ChoiceBox<String> query = new ChoiceBox<>(FXCollections.observableArrayList(queryList));
+
         gp.add(query, 1, 1, 1, 1);
 
         gp.add(new Label("Object 1: "), 0, 2, 1, 1);
